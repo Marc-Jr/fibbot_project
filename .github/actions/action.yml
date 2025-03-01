@@ -1,6 +1,6 @@
 name: "FibBot"
 description: "Computes Fibonacci numbers from modified files in a PR and posts the results as a comment."
-author: "Onel Rian"
+author: "Marc-jr"
 
 inputs:
   pr_number:
