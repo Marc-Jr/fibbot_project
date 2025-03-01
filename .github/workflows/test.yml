@@ -1,19 +1,16 @@
-name: Comment on Pull Request
+name: "Run FibBot"
 
 on:
   pull_request:
-    types: [opened, reopened, synchronized, edited]
-
-permissions:
-  pull-requests: write
-  contents: write
+    types: [opened, synchronize]
 
 jobs:
-  test:
+  run-fibbot:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
@@ -21,16 +18,27 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Install dependencies
-        run: cargo build --release
+      - name: Cache Cargo dependencies
+        uses: actions/cache@v3
+        id: cargo-cache
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: cargo-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            cargo-${{ runner.os }}-
+
+      - name: Fetch modified files
+        id: modified-files
+        uses: tj-actions/changed-files@v34
+        with:
+          since_last_remote_commit: 'true'
 
       - name: Run FibBot
-        run: |
-          cargo run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-          GITHUB_REPOSITORY_NAME: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}  # Correct PR Number here
-          ENABLE_FIB: true
-          MAX_THRESHOLD: 1000
+        uses: ./.github/actions
+        with:
+          pr_number: ${{ github.event.pull_request.number }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          modified_files: ${{ steps.modified-files.outputs.all_modified_files }}
