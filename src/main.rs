@@ -18,8 +18,10 @@ async fn main() {
     let sample_pr_text = "Numbers found: 2, 5, and 10.";
 
     let numbers = extract_numbers(sample_pr_text);
+    println!("extracted numbers are : {:?}", numbers);
     let mut fib_calc = Fibonacci::new();
     let fib_results: Vec<u32> = numbers.iter().map(|&n| fib_calc.compute(n)).collect();
+    println!("result is : {:?}", fib_results);
 
     let formatted_message = format_fibonacci_response(&numbers, &fib_results);
 
