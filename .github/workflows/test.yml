@@ -1,10 +1,19 @@
 name: Test FibBot
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened, edited]
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
+  test:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run FibBot
         uses: ./
+        with:
+          enable_fib: true
+          max_threshold: 1000
