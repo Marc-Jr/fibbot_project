@@ -1,9 +1,0 @@
-/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/libicu_normalizer-0aff054505fafe74.rmeta: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/error.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/properties.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/provider.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/uts46.rs
-
-/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/icu_normalizer-0aff054505fafe74.d: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/error.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/properties.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/provider.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/uts46.rs
-
-/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/lib.rs:
-/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/error.rs:
-/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/properties.rs:
-/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/provider.rs:
-/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/icu_normalizer-1.5.0/src/uts46.rs:

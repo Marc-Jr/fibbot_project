@@ -1,2 +1,0 @@
-#!/bin/sh
-echo "FibBot is running with enable_fib: $ENABLE_FIB and max_threshold: $MAX_THRESHOLD"

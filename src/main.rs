@@ -1,17 +1,8 @@
-mod config;
-mod extract;
-mod fibonacci;
-mod utils;
-mod github;
-mod tests;
-
-
+use fibbot::fib::fibonacci_iterative;
+use fibbot::github::post_comment;
+use fibbot::reg::extract_numbers_from_text;
 use std::env;
 use std::fs;
-
-use extract::extract_numbers_from_text;
-use fibonacci::fibonacci_iterative;
-use github::post_comment;
 
 #[tokio::main]
 async fn main() {
