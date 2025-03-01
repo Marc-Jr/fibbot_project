@@ -8,7 +8,6 @@ pub async fn post_comment(
     pr_number: u64, 
     message: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // Get the GitHub token from environment
     let token = env::var("GITHUB_TOKEN")?;
 
     // Initialize Octocrab with the token
@@ -17,9 +16,11 @@ pub async fn post_comment(
     // Fetch the pull request to ensure it's valid
     let pull_request = octocrab.pulls(repo_owner, repo_name).get(pr_number).await;
     match pull_request {
-        Ok(pr) => println!("Pull Request fetched: {:?}", pr),
+        Ok(pr) => {
+            println!("Pull Request fetched: {:?}", pr);
+        },
         Err(e) => {
-            eprintln!("Error fetching PR: {}", e);
+            eprintln!("Error fetching PR ({} / {} / {}): {:?}", repo_owner, repo_name, pr_number, e);
             return Err(e.into());
         }
     }
@@ -31,7 +32,7 @@ pub async fn post_comment(
             Ok(())
         }
         Err(e) => {
-            eprintln!("Error posting comment: {}", e);
+            eprintln!("Error posting comment to PR #{}: {:?}", pr_number, e);
             Err(e.into())
         }
     }
