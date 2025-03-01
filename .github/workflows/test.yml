@@ -12,24 +12,12 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Run FibBot
-        run: |
-          ./scripts/fibbot
-        env:
-          ENABLE_FIB: true
-          MAX_THRESHOLD: 1000
-
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Run Build
-        run: |
-          cargo build --release
+      - uses: actions/checkout@v3
+      - name: Run FibBot
+        uses: ./
+        with:
+          enable_fib: true
+          max_threshold: 1000
