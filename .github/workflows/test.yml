@@ -7,13 +7,12 @@ permissions:
   contents: write
 
 jobs:
-  test:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run FibBot
-        uses: ./
+        uses: ./action.yml
         with:
           enable_fib: true
           max_threshold: 1000
