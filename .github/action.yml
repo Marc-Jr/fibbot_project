@@ -1,0 +1,18 @@
+name: "FibBot"
+description: "Scans PR content for numbers and comments with their Fibonacci values."
+author: "Marc-Jr"
+inputs:
+  enable_fib:
+    description: "Enable Fibonacci calculation"
+    required: false
+    default: "true"
+  max_threshold:
+    description: "Maximum number to compute Fibonacci for"
+    required: false
+    default: "1000"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "activity"
+  color: "blue"
