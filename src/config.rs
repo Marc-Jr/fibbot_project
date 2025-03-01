@@ -1,20 +1,26 @@
-use std::env;
 
-pub struct Config {
-    pub enable_fib: bool,
-    pub max_threshold: u32,
-}
+use crate::{extract::extract_numbers_from_text, fibonacci::fibonacci_iterative};
+use std::fs;
 
-impl Config {
-    pub fn from_env() -> Self {
-        let enable_fib = env::var("INPUT_ENABLE_FIB")
-            .unwrap_or_else(|_| "true".to_string())
-            == "true";
-        let max_threshold = env::var("INPUT_MAX_THRESHOLD")
-            .unwrap_or_else(|_| "1000".to_string())
-            .parse()
-            .unwrap_or(1000);
+pub fn process_modified_files(file_paths: &str) -> String {
+    let mut all_numbers = Vec::new();
 
-        Config { enable_fib, max_threshold }
+    for file_path in file_paths.split(',') {
+        if let Ok(content) = fs::read_to_string(file_path) {
+            let numbers = extract_numbers_from_text(&content);
+            all_numbers.extend(numbers);
+        }
     }
+
+    if all_numbers.is_empty() {
+        return "No numbers found in the modified files.".to_string();
+    }
+
+    let mut response = String::from("#### Fibonacci Results:\n");
+    for &num in &all_numbers {
+        let fib = fibonacci_iterative(num);
+        response.push_str(&format!("- Fibonacci({}) = {}\n", num, fib));
+    }
+
+    response
 }

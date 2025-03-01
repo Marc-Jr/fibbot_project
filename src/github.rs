@@ -1,39 +1,25 @@
-use octocrab::models::issues::Comment;
-use octocrab::Octocrab;
+
+use reqwest::Client;
 use std::env;
 
-pub async fn post_comment(
-    repo_owner: &str, 
-    repo_name: &str, 
-    pr_number: u64, 
-    message: &str
-) -> Result<(), Box<dyn std::error::Error>> {
-    let token = env::var("GITHUB_TOKEN")?;
+pub async fn post_comment(pr_number: u32, token: &str, comment: &str) -> Result<(), reqwest::Error> {
+    let repo = env::var("GITHUB_REPOSITORY").expect("GITHUB_REPOSITORY not set");
+    let url = format!("https://api.github.com/repos/{}/issues/{}/comments", repo, pr_number);
 
-    // Initialize Octocrab with the token
-    let octocrab = Octocrab::builder().personal_token(token).build()?;
+    let client = Client::new();
+    let response = client
+        .post(&url)
+        .header("Authorization", format!("Bearer {}", token))
+        .header("User-Agent", "FibBot")
+        .header("Accept", "application/vnd.github.full+json")
+        .json(&serde_json::json!({ "body": comment }))
+        .send()
+        .await?;
 
-    // Fetch the pull request to ensure it's valid
-    let pull_request = octocrab.pulls(repo_owner, repo_name).get(pr_number).await;
-    match pull_request {
-        Ok(pr) => {
-            println!("Pull Request fetched: {:?}", pr);
-        },
-        Err(e) => {
-            eprintln!("Error fetching PR ({} / {} / {}): {:?}", repo_owner, repo_name, pr_number, e);
-            return Err(e.into());
-        }
+    if response.status().is_success() {
+        println!("✅ Comment posted successfully.");
+    } else {
+        eprintln!("❌ Failed to post comment: {:?}", response.text().await?);
     }
-
-    // Try to create a comment
-    match octocrab.issues(repo_owner, repo_name).create_comment(pr_number, message).await {
-        Ok(Comment { id, .. }) => {
-            println!("Comment successfully posted with ID: {}", id);
-            Ok(())
-        }
-        Err(e) => {
-            eprintln!("Error posting comment to PR #{}: {:?}", pr_number, e);
-            Err(e.into())
-        }
-    }
+    Ok(())
 }
