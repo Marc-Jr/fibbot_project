@@ -1,7 +1,6 @@
 use octocrab::models::pulls::PullRequest;
 use octocrab::Octocrab;
 use std::env;
-
 pub async fn post_comment(repo_owner: &str, repo_name: &str, pr_number: u64, message: &str) -> Result<(), Box<dyn std::error::Error>> {
     let token = env::var("GITHUB_TOKEN")?;
     let octocrab = Octocrab::builder().personal_token(token).build()?;
