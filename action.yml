@@ -1,4 +1,4 @@
-name: "FibBot"
+name: "FibBot"   
 description: "Scans PR content for numbers and comments with their Fibonacci values."
 author: "Marc-Jr"
 inputs:
