@@ -2,13 +2,17 @@ name: Comment on Pull Request
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronized, edited]
+
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
-  post-comment:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Rust
@@ -28,6 +32,21 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY_NAME: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.number }}
-          PR_BODY: ${{ github.event.pull_request.body }}
           ENABLE_FIB: true
           MAX_THRESHOLD: 1000
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Run Build
+        run: |
+          cargo build --release

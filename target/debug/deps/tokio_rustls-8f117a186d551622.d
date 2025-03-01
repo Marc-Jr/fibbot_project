@@ -1,0 +1,9 @@
+/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/libtokio_rustls-8f117a186d551622.rmeta: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/client.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/mod.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/handshake.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/server.rs
+
+/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/tokio_rustls-8f117a186d551622.d: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/client.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/mod.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/handshake.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/server.rs
+
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/lib.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/client.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/mod.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/common/handshake.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.26.1/src/server.rs:

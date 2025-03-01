@@ -1,0 +1,11 @@
+/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/libbitflags-b269e368f5182e8a.rmeta: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/iter.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/parser.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/traits.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/public.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/internal.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/external.rs
+
+/Users/gisstudent/Projects/rust-projects/fibbot_project/target/debug/deps/bitflags-b269e368f5182e8a.d: /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/lib.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/iter.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/parser.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/traits.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/public.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/internal.rs /Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/external.rs
+
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/lib.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/iter.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/parser.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/traits.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/public.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/internal.rs:
+/Users/gisstudent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-2.8.0/src/external.rs:

@@ -7,5 +7,12 @@ edition = "2021"
 regex ="1.5"
 tokio = { version = "1", features = ["full"] }
 octocrab = "0.43"
+serde_json = "1.0"
+serde = {version="1.0", features=["derive"]}
+reqwest = { version = "0.12.12", features = ["blocking", "json"] }
+dotenv = "0.15"
+anyhow = "1.0"
+thiserror = "2.0"
+mockito = "1.6.1"
 
 
