@@ -1,9 +1,8 @@
 use std::env;
 
 pub struct Config {
-    pub  enable_fib: bool,  // Use ⁠ bool ⁠ instead of ⁠ Bool ⁠
-     pub max_threshold: u32,
-    
+    pub enable_fib: bool,
+    pub max_threshold: u32,
 }
 
 impl Config {

@@ -1,0 +1,27 @@
+name: "FibBot"
+description: "Computes Fibonacci numbers from modified files in a PR and posts the results as a comment."
+author: "Onel Rian"
+
+inputs:
+  pr_number:
+    description: "The pull request number to process."
+    required: true
+  github_token:
+    description: "The GitHub token for API access."
+    required: true
+  modified_files:
+    description: "Comma-separated list of modified files in the PR."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build the FibBot project
+      shell: bash
+      run: |
+        cargo build --release
+
+    - name: Run FibBot
+      shell: bash
+      run: |
+        ./target/release/fibbot ${{ inputs.pr_number }} ${{ inputs.github_token }} "${{ inputs.modified_files }}"
