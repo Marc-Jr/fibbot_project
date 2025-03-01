@@ -33,9 +33,15 @@ async fn main() {
 
         println!("Computed Fibonacci Numbers: {}", formatted_message);
 
+        // Fetching the GitHub repository owner, name, and PR number
         let repo_owner = env::var("GITHUB_REPOSITORY_OWNER").unwrap_or_else(|_| "owner".to_string());
         let repo_name = env::var("GITHUB_REPOSITORY_NAME").unwrap_or_else(|_| "repo".to_string());
-        let pr_number = env::var("PR_NUMBER").unwrap_or_else(|_| "1".to_string()).parse::<u64>().unwrap_or(1);
+
+        // Ensure PR_NUMBER is correctly retrieved and passed
+        let pr_number = env::var("PR_NUMBER")
+            .unwrap_or_else(|_| "1".to_string()) // default to 1 if not found
+            .parse::<u64>()
+            .unwrap_or(1); // handle parsing failure
 
         if let Err(e) = post_comment(&repo_owner, &repo_name, pr_number, &formatted_message).await {
             eprintln!("Error posting comment: {}", e);
