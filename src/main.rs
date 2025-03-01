@@ -35,7 +35,7 @@ async fn main() {
 
         let repo_owner = env::var("GITHUB_REPOSITORY_OWNER").unwrap_or_else(|_| "owner".to_string());
         let repo_name = env::var("GITHUB_REPOSITORY_NAME").unwrap_or_else(|_| "repo".to_string());
-        let pr_number = env::var("GITHUB_PR_NUMBER").unwrap_or_else(|_| "1".to_string()).parse::<u64>().unwrap_or(1);
+        let pr_number = env::var("PR_NUMBER").unwrap_or_else(|_| "1".to_string()).parse::<u64>().unwrap_or(1);
 
         if let Err(e) = post_comment(&repo_owner, &repo_name, pr_number, &formatted_message).await {
             eprintln!("Error posting comment: {}", e);
