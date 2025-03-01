@@ -3,7 +3,7 @@
 FibBot is a custom GitHub Action created with Rust that scans pull requests (PRs) for numbers, calculates the Fibonacci numbers for them, and posts the results as a comment on the PR. It’s a fun way to bring Fibonacci calculations directly into your GitHub workflow.
 
 ### Key Features
-Fibonacci Calculation: Finds numbers in modified PR files and calculates the Fibonacci numbers for them.
+- Fibonacci Calculation: Finds numbers in modified PR files and calculates the Fibonacci numbers for them.
 - GitHub API Integration: Automatically posts a comment with the Fibonacci results directly on the PR.
 - Rust-based: Built with Rust for speed and efficiency.
 - File Scanning: It scans the changed files in the PR to find any numerical values.
