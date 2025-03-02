@@ -19,3 +19,6 @@ How to Use It
 - Add/Modify Content: Add or modify the files in your new branch.
 - Create a Pull Request: Open a PR to the main branch, and FibBot will trigger.
 Once your PR is open, FibBot will go through the files, find any numbers, calculate their Fibonacci values, and then comment those results back on your PR.
+
+
+12 2 5 8 
